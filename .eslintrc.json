@@ -49,6 +49,7 @@
         ],
         "no-underscore-dangle": "off",
         "no-eval": "error",
+        "no-plusplus": "off",
         "default-param-last": "off",
         "import/extensions": "off",
         "import/prefer-default-export": "off",

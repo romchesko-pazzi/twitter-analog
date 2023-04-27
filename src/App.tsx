@@ -1,3 +1,9 @@
+import { SignUp } from 'src/pages/SignUp';
+
 export const App = () => {
-  return <div>Hello</div>;
+  return (
+    <div>
+      <SignUp />
+    </div>
+  );
 };
