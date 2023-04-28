@@ -5,6 +5,8 @@ export interface ITheme {
     fontColorDark: '#000000';
     fontColorLight: '#FFFFFF';
     backgroundColor: '#FFFFFF' | '#000000';
+    borderColor: 'rgba(0, 0, 0, 0.2)';
+    inputPlaceholderColor: 'rgba(0, 0, 0, 0.6)';
   };
   fontSizes: {
     xxs: '1.4rem';

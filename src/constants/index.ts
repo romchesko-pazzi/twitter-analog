@@ -1,4 +1,4 @@
 export { days } from './signUp/days';
-export { Months } from './signUp/months';
+export { months } from './signUp/months';
 export { years } from './signUp/years';
 export { Themes } from './themes';

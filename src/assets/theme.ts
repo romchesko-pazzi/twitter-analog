@@ -9,6 +9,8 @@ const baseTheme: ITheme = {
     fontColorDark: '#000000',
     fontColorLight: '#FFFFFF',
     backgroundColor: '#FFFFFF',
+    borderColor: 'rgba(0, 0, 0, 0.2)',
+    inputPlaceholderColor: 'rgba(0, 0, 0, 0.6)',
   },
   fontSizes: {
     xxs: '1.4rem',

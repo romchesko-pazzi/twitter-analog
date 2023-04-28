@@ -5,23 +5,16 @@ const inputStyles = css`
   font-size: ${({ theme }) => theme.fontSizes.s};
   font-family: inherit;
   width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid ${({ theme }) => theme.colors.borderColor};
   outline: none;
   padding-top: ${({ theme }) => theme.padding.xxl};
   padding-left: ${({ theme }) => theme.padding.l};
   padding-bottom: ${({ theme }) => theme.padding.xxl};
   border-radius: ${({ theme }) => theme.borderRadius.s};
-  color: rgba(0, 0, 0, 0.6);
-`;
-
-const birthdayInputStyles = css`
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  padding-top: ${({ theme }) => theme.padding.xxl};
-  padding-left: ${({ theme }) => theme.padding.l};
-  padding-bottom: ${({ theme }) => theme.padding.xxl};
-  color: rgba(0, 0, 0, 0.6);
-
-  display: block;
+  color: ${({ theme }) => theme.colors.fontColorDark};
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.inputPlaceholderColor};
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -53,7 +46,6 @@ export const Title = styled.h3`
   margin-bottom: ${({ theme }) => theme.margin['3']};
 `;
 
-export const Fields = styled.div``;
 export const Name = styled.input`
   ${inputStyles};
   margin-bottom: ${({ theme }) => theme.margin['2.5']};
@@ -71,7 +63,6 @@ export const UseEmail = styled(NavLink)`
   display: block;
 `;
 
-export const BirthdayBox = styled.div``;
 export const Subtitle = styled.div`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.s};
@@ -91,41 +82,4 @@ export const BirthdayInput = styled.div`
     margin-right: ${({ theme }) => theme.margin['2']};
   }
   margin-bottom: ${({ theme }) => theme.margin['6.4']};
-`;
-
-export const Month = styled.div`
-  flex: 1 1 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: ${({ theme }) => theme.borderRadius.s};
-`;
-
-export const SelectBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-export const Value = styled.span`
-  ${birthdayInputStyles};
-`;
-
-export const SvgBox = styled.div`
-  display: flex;
-  margin-right: ${({ theme }) => theme.margin['2.5']};
-  & > svg {
-    cursor: pointer;
-    fill: rgba(0, 0, 0, 0.6);
-  }
-`;
-
-export const Day = styled.div`
-  flex: 1 1 25%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: ${({ theme }) => theme.borderRadius.s};
-`;
-
-export const Year = styled.div`
-  flex: 1 1 25%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: ${({ theme }) => theme.borderRadius.s};
 `;

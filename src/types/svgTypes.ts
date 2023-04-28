@@ -1,4 +1,4 @@
-export type SvgType =
+export type Svg =
   | 'logo'
   | 'home'
   | 'explore'

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Logo, Vector } from 'src/assets/svg';
-import { SvgType } from 'src/types';
+import { Svg } from 'src/types';
 
-export const SvgSelector = ({ name }: { name: SvgType }) => {
+export const SvgSelector = ({ name }: { name: Svg }) => {
   switch (name) {
     case 'logo':
       return <Logo />;

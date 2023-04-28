@@ -1,4 +1,4 @@
-import { SignUp } from 'src/pages/SignUp';
+import { SignUp } from 'src/pages/signUp';
 
 export const App = () => {
   return (

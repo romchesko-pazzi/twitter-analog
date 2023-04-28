@@ -1,1 +1,2 @@
-export type { SvgType } from './svgTypes';
+export type { InputSelectTime } from './inputSelectTime';
+export type { Svg } from './svgTypes';

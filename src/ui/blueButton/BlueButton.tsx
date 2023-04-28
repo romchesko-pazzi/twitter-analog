@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBlueButton } from 'src/interfaces/buttons';
+import { IBlueButton } from 'src/interfaces';
 
 import { Box, Title } from './styled';
 
