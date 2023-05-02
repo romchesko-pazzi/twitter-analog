@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { InputSelectTime } from 'src/types';
+import { InputSelectName } from 'src/types';
 
 const birthdayInputStyles = css`
   font-size: ${({ theme }) => theme.fontSizes.s};
@@ -15,7 +15,7 @@ const center = css`
   align-items: center;
 `;
 
-export const Main = styled.div<{ title: InputSelectTime }>`
+export const Main = styled.div<{ title: InputSelectName }>`
   flex: ${({ title }) => (title === 'Month' ? '1 1 50%' : '1 1 25%')};
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
   border-radius: ${({ theme }) => theme.borderRadius.s};
@@ -51,10 +51,9 @@ export const Options = styled.ul<{ display: 'block' | 'none' }>`
   list-style: none;
   max-height: 15rem;
   border-radius: 0.5rem;
-  width: 100%;
   z-index: 100;
   overflow-y: scroll;
-  max-width: 100%;
+  min-width: 100%;
   scrollbar-width: none;
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
 `;

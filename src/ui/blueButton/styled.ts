@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export const Box = styled.button`
-  background: ${({ theme }) => theme.colors.mainColor};
+export const Box = styled.button<{ disabled: boolean }>`
+  background: ${({ theme, disabled }) =>
+    disabled ? theme.colors.mainDisabledColor : theme.colors.mainColor};
   border-radius: ${({ theme }) => theme.borderRadius.l};
   cursor: pointer;
   min-width: 100%;

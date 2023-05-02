@@ -1,12 +1,13 @@
 export interface ITheme {
   colors: {
     mainColor: '#1DA1F2';
+    mainDisabledColor: '#1da1f266';
     mainBackgroundColor: '#F9F9FA';
     fontColorDark: '#000000';
     fontColorLight: '#FFFFFF';
     backgroundColor: '#FFFFFF' | '#000000';
-    borderColor: 'rgba(0, 0, 0, 0.2)';
-    inputPlaceholderColor: 'rgba(0, 0, 0, 0.6)';
+    borderColor: '#00000033';
+    inputPlaceholderColor: '#00000099';
     errorColor: '#ff3333';
   };
   fontSizes: {

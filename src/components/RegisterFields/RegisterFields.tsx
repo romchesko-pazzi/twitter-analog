@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import PhoneInput from 'react-phone-number-input/react-hook-form-input';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SelectDateOfBirth } from 'src/components';
 import { days, months, years } from 'src/constants';
@@ -12,6 +13,7 @@ import {
   Input,
   NameErrorLabel,
   PhoneErrorLabel,
+  PhoneInputWrapper,
   UseEmail,
 } from './styled';
 
@@ -19,16 +21,16 @@ export const RegisterFields = () => {
   const {
     register,
     handleSubmit,
-    reset,
-    formState: { errors },
+    setValue,
+    control,
+    watch,
+    formState: { errors, isValid, isDirty },
   } = useForm<IAuthFields>({
     mode: 'onBlur',
     resolver: yupResolver(auth),
   });
-
-  const onSubmit = (data: IAuthFields) => {
-    reset();
-  };
+  const selectedDateOfBirth = watch(['Month', 'Day', 'Year']);
+  const onSubmit = (data: IAuthFields) => {};
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,20 +41,22 @@ export const RegisterFields = () => {
         {...register('name')}
       />
       <NameErrorLabel htmlFor="name">{errors.name?.message}</NameErrorLabel>
-      <Input
-        hasError={!!errors.phoneNumber?.message}
-        placeholder="Phone number"
-        {...register('phoneNumber')}
-      />
+      <PhoneInputWrapper hasError={!!errors.phoneNumber?.message}>
+        <PhoneInput placeholder="Phone number" name="phoneNumber" control={control} />
+      </PhoneInputWrapper>
       <PhoneErrorLabel htmlFor="phone">{errors.phoneNumber?.message}</PhoneErrorLabel>
       <UseEmail to="/">Use email</UseEmail>
       <SignUpDescription />
       <BirthdayInput>
-        <SelectDateOfBirth title="Month" items={months} />
-        <SelectDateOfBirth title="Day" items={days} />
-        <SelectDateOfBirth title="Year" items={years} />
+        <SelectDateOfBirth setValue={setValue} title="Month" items={months} />
+        <SelectDateOfBirth setValue={setValue} title="Day" items={days} />
+        <SelectDateOfBirth setValue={setValue} title="Year" items={years} />
       </BirthdayInput>
-      <BlueButton title="Next" type="submit" />
+      <BlueButton
+        isDisabled={selectedDateOfBirth.includes(undefined) || !isValid}
+        title="Next"
+        type="submit"
+      />
     </form>
   );
 };

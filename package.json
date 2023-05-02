@@ -21,6 +21,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-phone-number-input": "^3.2.20",
     "react-router-dom": "^6.10.0",
     "styled-components": "^5.3.10",
     "yup": "^1.1.1"

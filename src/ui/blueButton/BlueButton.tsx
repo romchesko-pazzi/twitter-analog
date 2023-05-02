@@ -3,9 +3,9 @@ import { IBlueButton } from 'src/interfaces';
 
 import { Box, Title } from './styled';
 
-export const BlueButton = ({ title, type }: IBlueButton) => {
+export const BlueButton = ({ title, type, isDisabled }: IBlueButton) => {
   return (
-    <Box type={type}>
+    <Box disabled={isDisabled} type={type}>
       <Title>{title}</Title>
     </Box>
   );

@@ -1,4 +1,4 @@
-export const months: ReadonlyArray<string> = [
+export const months = [
   'January',
   'February',
   'March',
@@ -11,4 +11,4 @@ export const months: ReadonlyArray<string> = [
   'October',
   'November',
   'December',
-];
+] as const;

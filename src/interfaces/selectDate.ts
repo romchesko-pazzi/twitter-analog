@@ -1,6 +1,9 @@
-import { InputSelectTime } from 'src/types';
+import { UseFormSetValue } from 'react-hook-form';
+import { IAuthFields } from 'src/interfaces/authFields';
+import { InputSelectName, Months } from 'src/types';
 
 export interface ISelectDateOfBirth {
-  title: InputSelectTime;
-  items: ReadonlyArray<string> | ReadonlyArray<number>;
+  title: InputSelectName;
+  items: ReadonlyArray<Months> | ReadonlyArray<number>;
+  setValue: UseFormSetValue<IAuthFields>;
 }

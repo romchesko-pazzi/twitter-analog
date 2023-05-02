@@ -1,2 +1,2 @@
-export type { InputSelectTime } from './inputSelectTime';
+export type { InputSelectName, Months } from './inputSelectName';
 export type { Svg } from './svgTypes';

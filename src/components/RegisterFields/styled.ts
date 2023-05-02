@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import { InputProps } from 'src/interfaces';
 
 const labelStyles = css`
   font-size: ${({ theme }) => theme.fontSizes.xxs};
@@ -11,7 +12,7 @@ const labelStyles = css`
   color: ${({ theme }) => theme.colors.errorColor};
 `;
 
-export const Input = styled.input<{ hasError: boolean }>`
+const inputStyles = css<InputProps>`
   border: 1px solid
     ${({ theme, hasError }) =>
       hasError ? theme.colors.errorColor : theme.colors.borderColor};
@@ -28,6 +29,10 @@ export const Input = styled.input<{ hasError: boolean }>`
     color: ${({ theme, hasError }) =>
       hasError ? theme.colors.errorColor : theme.colors.inputPlaceholderColor};
   }
+`;
+
+export const Input = styled.input<InputProps>`
+  ${inputStyles}
 `;
 
 export const NameErrorLabel = styled.label`
@@ -53,4 +58,10 @@ export const BirthdayInput = styled.div`
     margin-right: ${({ theme }) => theme.margin['2']};
   }
   margin-bottom: ${({ theme }) => theme.margin['6.4']};
+`;
+
+export const PhoneInputWrapper = styled.div<InputProps>`
+  & input {
+    ${inputStyles}
+  }
 `;
