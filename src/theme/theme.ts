@@ -11,6 +11,7 @@ const baseTheme: ITheme = {
     backgroundColor: '#FFFFFF',
     borderColor: 'rgba(0, 0, 0, 0.2)',
     inputPlaceholderColor: 'rgba(0, 0, 0, 0.6)',
+    errorColor: '#ff3333',
   },
   fontSizes: {
     xxs: '1.4rem',
@@ -27,6 +28,7 @@ const baseTheme: ITheme = {
     bold: 700,
   },
   padding: {
+    xxxs: '0.5rem',
     xxs: '1rem',
     xs: '1.4rem',
     s: '1.6rem',
@@ -55,6 +57,9 @@ const baseTheme: ITheme = {
     tiny: '1.5rem',
     small: '2rem',
     default: '2.4rem',
+  },
+  height: {
+    '2.4': '2.4rem',
   },
 };
 

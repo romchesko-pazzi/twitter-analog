@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
+export const Box = styled.button`
   background: ${({ theme }) => theme.colors.mainColor};
   border-radius: ${({ theme }) => theme.borderRadius.l};
   cursor: pointer;
+  min-width: 100%;
 `;
 
 export const Title = styled.span`

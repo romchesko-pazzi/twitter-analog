@@ -1,6 +1,8 @@
-const years: number[] = [];
+import { limitYear, startYear } from 'src/constants';
 
-for (let i = 1899; i <= 2023; i++) {
+const years: Array<number> = [];
+
+for (let i = startYear; i <= limitYear; i++) {
   years.push(i);
 }
 
