@@ -15,8 +15,8 @@ export const Logo = styled.div`
   margin-top: ${({ theme }) => theme.margin['3']};
 
   & svg {
-    height: 4rem;
-    width: 4rem;
+    height: ${({ theme }) => theme.size['4']};
+    width: ${({ theme }) => theme.size['4']};
   }
 `;
 

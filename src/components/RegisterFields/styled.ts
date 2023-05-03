@@ -8,7 +8,7 @@ const labelStyles = css`
   padding-left: ${({ theme }) => theme.padding.xs};
   padding-top: ${({ theme }) => theme.padding.xxxs};
   display: block;
-  height: ${({ theme }) => theme.height['2.4']};
+  height: ${({ theme }) => theme.size['2.4']};
   color: ${({ theme }) => theme.colors.errorColor};
 `;
 

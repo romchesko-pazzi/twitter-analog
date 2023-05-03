@@ -1,0 +1,1 @@
+export { SignUpBigPicture } from './SignUpBigPicture';

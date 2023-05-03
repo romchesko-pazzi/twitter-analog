@@ -11,8 +11,10 @@ const baseTheme: ITheme = {
     fontColorLight: '#FFFFFF',
     backgroundColor: '#FFFFFF',
     borderColor: '#00000033',
+    borderButtonColor: '#E4EAED',
     inputPlaceholderColor: '#00000099',
     errorColor: '#ff3333',
+    linkColor: '#1e97e1',
   },
   fontSizes: {
     xxs: '1.4rem',
@@ -26,7 +28,9 @@ const baseTheme: ITheme = {
   },
   fontWeights: {
     normal: 400,
+    medium: 500,
     bold: 700,
+    extraBold: 900,
   },
   padding: {
     xxxs: '0.5rem',
@@ -43,6 +47,7 @@ const baseTheme: ITheme = {
     s: '0.6rem',
     m: '2.75rem',
     l: '3.1rem',
+    xl: '10rem',
   },
   margin: {
     '1': '1rem',
@@ -52,15 +57,25 @@ const baseTheme: ITheme = {
     '3.5': '3.5rem',
     '4': '4rem',
     '4.3': '4.3rem',
+    '4.6': '4.6rem',
+    '5': '5rem',
+    '5.7': '5.7rem',
     '6.4': '6.4rem',
+    '20': '20rem',
   },
   lineHeights: {
     tiny: '1.5rem',
     small: '2rem',
     default: '2.4rem',
+    medium: '4.9rem',
+    big: '9.8rem',
   },
-  height: {
+  size: {
     '2.4': '2.4rem',
+    '4': '4rem',
+    '5': '5rem',
+    '37.3': '37.3rem',
+    '40.3': '40.3rem',
   },
 };
 

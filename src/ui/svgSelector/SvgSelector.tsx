@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo, Vector } from 'src/assets/svg';
+import { Google, Logo, Vector } from 'src/assets/svg';
 import { Svg } from 'src/types';
 
 export const SvgSelector = ({ name }: { name: Svg }) => {
@@ -8,6 +8,8 @@ export const SvgSelector = ({ name }: { name: Svg }) => {
       return <Logo />;
     case 'vector':
       return <Vector />;
+    case 'google':
+      return <Google />;
     default:
       return <svg />;
   }

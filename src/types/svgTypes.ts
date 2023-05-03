@@ -11,4 +11,5 @@ export type Svg =
   | 'image'
   | 'heart'
   | 'magnifier'
-  | 'vector';
+  | 'vector'
+  | 'google';
