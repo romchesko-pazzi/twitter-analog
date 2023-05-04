@@ -1,4 +1,10 @@
-import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+
+const BlueTextStyles = css`
+  color: ${({ theme }) => theme.colors.linkColor};
+  cursor: pointer;
+`;
 
 export const Main = styled.div`
   margin-left: ${({ theme }) => theme.margin['5']};
@@ -14,11 +20,14 @@ export const Text = styled.span`
 `;
 
 export const BlueText = styled.span`
-  color: ${({ theme }) => theme.colors.linkColor};
-  cursor: pointer;
+  ${BlueTextStyles};
 `;
 
-export const LinkToLogin = styled.div`
+export const Description = styled.div`
   font-size: ${({ theme }) => theme.fontSizes.xs};
   line-height: ${({ theme }) => theme.lineHeights.small};
+`;
+
+export const LinkToLogin = styled(NavLink)`
+  ${BlueTextStyles};
 `;

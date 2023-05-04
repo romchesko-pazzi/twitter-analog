@@ -1,6 +1,7 @@
 import React from 'react';
+import { path } from 'src/types';
 
-import { BlueText, LinkToLogin, Main, Text } from './styled';
+import { BlueText, Description, LinkToLogin, Main, Text } from './styled';
 
 export const Terms = () => {
   return (
@@ -9,9 +10,9 @@ export const Terms = () => {
         By singing up you agree to the <BlueText>Terms of Service</BlueText> and{' '}
         <BlueText>Privacy Policy,</BlueText> including <BlueText>Cookie Use.</BlueText>
       </Text>
-      <LinkToLogin>
-        Already have an account? <BlueText>Log in</BlueText>
-      </LinkToLogin>
+      <Description>
+        Already have an account? <LinkToLogin to={path.login}>Log in</LinkToLogin>
+      </Description>
     </Main>
   );
 };

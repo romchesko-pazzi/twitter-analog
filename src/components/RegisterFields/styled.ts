@@ -1,35 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { inputStyles, labelStyles } from 'src/assets';
 import { InputProps } from 'src/interfaces';
-
-const labelStyles = css`
-  font-size: ${({ theme }) => theme.fontSizes.xxs};
-  margin-bottom: ${({ theme }) => theme.margin['2']};
-  padding-left: ${({ theme }) => theme.padding.xs};
-  padding-top: ${({ theme }) => theme.padding.xxxs};
-  display: block;
-  height: ${({ theme }) => theme.size['2.4']};
-  color: ${({ theme }) => theme.colors.errorColor};
-`;
-
-const inputStyles = css<InputProps>`
-  border: 1px solid
-    ${({ theme, hasError }) =>
-      hasError ? theme.colors.errorColor : theme.colors.borderColor};
-  font-size: ${({ theme }) => theme.fontSizes.s};
-  font-family: inherit;
-  width: 100%;
-  outline: none;
-  padding-top: ${({ theme }) => theme.padding.xxl};
-  padding-left: ${({ theme }) => theme.padding.l};
-  padding-bottom: ${({ theme }) => theme.padding.xxl};
-  border-radius: ${({ theme }) => theme.borderRadius.s};
-  color: ${({ theme }) => theme.colors.fontColorDark};
-  &::placeholder {
-    color: ${({ theme, hasError }) =>
-      hasError ? theme.colors.errorColor : theme.colors.inputPlaceholderColor};
-  }
-`;
 
 export const Input = styled.input<InputProps>`
   ${inputStyles}
@@ -49,7 +21,7 @@ export const UseEmail = styled(NavLink)`
   color: ${({ theme }) => theme.colors.mainColor};
   font-size: ${({ theme }) => theme.fontSizes.s};
   margin-bottom: ${({ theme }) => theme.margin['4']};
-  display: block;
+  display: inline-block;
 `;
 
 export const BirthdayInput = styled.div`

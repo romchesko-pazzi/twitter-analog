@@ -1,10 +1,10 @@
+import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const buttonStyle = css`
   border-radius: ${({ theme }) => theme.borderRadius.xl};
   border: 1px solid ${({ theme }) => theme.colors.borderButtonColor};
   padding: ${({ theme }) => theme.padding.xl} 0 ${({ theme }) => theme.padding.xl} 0;
-
   display: flex;
   justify-content: center;
   min-width: 100%;
@@ -26,12 +26,13 @@ export const GoogleButton = styled.button`
   }
 `;
 
+export const EmailPhoneButton = styled(NavLink)`
+  ${buttonStyle};
+`;
+
 export const ButtonText = styled.span`
   color: ${({ theme }) => theme.colors.fontColorDark};
   font-size: ${({ theme }) => theme.fontSizes.m};
   font-weight: ${({ theme }) => theme.fontWeights.medium};
   line-height: ${({ theme }) => theme.lineHeights.default};
-`;
-export const EmailPhoneButton = styled.button`
-  ${buttonStyle};
 `;

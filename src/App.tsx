@@ -1,9 +1,16 @@
-import { SignUp } from 'src/pages/signUp';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Global } from 'src/assets';
+import { AppRoutes } from 'src/components';
+import { lightTheme } from 'src/theme';
 
 export const App = () => {
   return (
-    <div>
-      <SignUp />
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <BrowserRouter>
+        <Global />
+        <AppRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };

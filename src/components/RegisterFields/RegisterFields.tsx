@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { SelectDateOfBirth } from 'src/components';
 import { days, months, years } from 'src/constants';
 import { IAuthFields } from 'src/interfaces';
+import { path } from 'src/types';
 import { BlueButton, SignUpDescription } from 'src/ui';
 import { auth } from 'src/utils';
 
@@ -24,7 +25,7 @@ export const RegisterFields = () => {
     setValue,
     control,
     watch,
-    formState: { errors, isValid, isDirty },
+    formState: { errors, isValid },
   } = useForm<IAuthFields>({
     mode: 'onBlur',
     resolver: yupResolver(auth),
@@ -45,7 +46,7 @@ export const RegisterFields = () => {
         <PhoneInput placeholder="Phone number" name="phoneNumber" control={control} />
       </PhoneInputWrapper>
       <PhoneErrorLabel htmlFor="phone">{errors.phoneNumber?.message}</PhoneErrorLabel>
-      <UseEmail to="/">Use email</UseEmail>
+      <UseEmail to={path.signUpBigPicture}>Use email</UseEmail>
       <SignUpDescription />
       <BirthdayInput>
         <SelectDateOfBirth setValue={setValue} title="Month" items={months} />
