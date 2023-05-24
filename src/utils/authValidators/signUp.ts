@@ -8,7 +8,7 @@ const nameValidation = yup
 
 const phoneValidation = yup.string().required('Please, enter your number');
 
-export const auth = yup.object({
+export const signUp = yup.object({
   name: nameValidation,
   phoneNumber: phoneValidation,
 });

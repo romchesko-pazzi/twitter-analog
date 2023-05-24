@@ -18,11 +18,16 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
+    "@reduxjs/toolkit": "^1.9.5",
+    "firebase": "^9.21.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.4",
     "react-hook-form": "^7.43.9",
     "react-phone-number-input": "^3.2.20",
     "react-router-dom": "^6.11.0",
+    "redux": "^4.2.1",
+    "redux-saga": "^1.2.3",
     "styled-components": "^5.3.10",
     "yup": "^1.1.1"
   },

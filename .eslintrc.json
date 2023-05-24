@@ -152,9 +152,7 @@
         "simple-import-sort/imports": ["error", {
             "groups": [
                 // Packages `react` related packages come first.
-                ["^react", "^styled-components", "^uuid", "yup", "^src?\\w"],
-                // Internal packages.
-                ["^(@|components)(/.*|$)"],
+                ["^react", "^styled-components", "^uuid", "yup", "firebase", "^src?\\w"],
                 // Side effect imports.
                 ["^\\u0000"],
                 // Parent imports. Put `..` last.

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import PhoneInput from 'react-phone-number-input/react-hook-form-input';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { SelectDateOfBirth } from 'src/components';
+import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { auth } from 'src/firebase';
+import { Modal, SelectDateOfBirth } from 'src/components';
 import { days, months, years } from 'src/constants';
 import { IAuthFields } from 'src/interfaces';
 import { path } from 'src/types';
 import { BlueButton, SignUpDescription } from 'src/ui';
-import { auth } from 'src/utils';
+import { signUp } from 'src/utils';
 
 import {
   BirthdayInput,
@@ -19,6 +21,9 @@ import {
 } from './styled';
 
 export const RegisterFields = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [confirmationObject, setConfirmationObject] = useState({});
+
   const {
     register,
     handleSubmit,
@@ -28,10 +33,38 @@ export const RegisterFields = () => {
     formState: { errors, isValid },
   } = useForm<IAuthFields>({
     mode: 'onBlur',
-    resolver: yupResolver(auth),
+    resolver: yupResolver(signUp),
   });
   const selectedDateOfBirth = watch(['Month', 'Day', 'Year']);
-  const onSubmit = (data: IAuthFields) => {};
+
+  const setUpRecaptcha = () => {
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      'recaptcha-btn',
+      { size: 'invisible' },
+      auth,
+    );
+  };
+
+  const onSubmit = async (data: IAuthFields) => {
+    setUpRecaptcha();
+    const { phoneNumber } = data;
+
+    try {
+      const response = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        window.recaptchaVerifier,
+      );
+
+      setConfirmationObject(response);
+      setIsModalOpen(true);
+    } catch (error: unknown) {
+      const syntaxError = error as SyntaxError;
+
+      console.log(syntaxError.message);
+    }
+  };
+  const toggle = () => setIsModalOpen(!isModalOpen);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -54,9 +87,15 @@ export const RegisterFields = () => {
         <SelectDateOfBirth setValue={setValue} title="Year" items={years} />
       </BirthdayInput>
       <BlueButton
+        id="recaptcha-btn"
         isDisabled={selectedDateOfBirth.includes(undefined) || !isValid}
         title="Next"
         type="submit"
+      />
+      <Modal
+        confirmationObject={confirmationObject}
+        onClose={toggle}
+        isOpen={isModalOpen}
       />
     </form>
   );
